@@ -15,8 +15,12 @@ export function createTypeOrmOptions(
     password: config.get<string>('DB_PASSWORD'),
     database: config.get<string>('DB_NAME'),
     ssl: sslEnabled ? { rejectUnauthorized: false } : undefined,
-    synchronize: config.get<boolean>('DB_SYNCHRONIZE') ?? false,
-    logging: config.get<boolean>('DB_LOGGING') ?? false,
+    synchronize: config.get<boolean>('DB_SYNCHRONIZE') ?? true,
+    entities: ['dist/**/*.entity.{ts,js}'],
+    migrations: ['dist/migrations/*.{ts,js}'],
+    migrationsTableName: 'typeorm_migrations',
+    logger: 'file',
+    logging: config.get<boolean>('DB_LOGGING') ?? true,
     autoLoadEntities: true,
   };
 }
