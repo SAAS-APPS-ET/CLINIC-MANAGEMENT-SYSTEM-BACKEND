@@ -1,0 +1,24 @@
+export type NodeEnv = 'development' | 'test' | 'production';
+export type AppEnv = {
+    NODE_ENV: NodeEnv;
+    PORT: number;
+    JWT_ACCESS_SECRET: string;
+    JWT_ACCESS_EXPIRES_IN: string;
+    JWT_REFRESH_SECRET: string;
+    JWT_REFRESH_EXPIRES_IN: string;
+    DB_HOST: string;
+    DB_PORT: number;
+    DB_USERNAME: string;
+    DB_PASSWORD: string;
+    DB_NAME: string;
+    DB_SSL: boolean;
+    DB_SYNCHRONIZE: boolean;
+    DB_LOGGING: boolean;
+    SMTP_HOST: string;
+    SMTP_PORT: number;
+    SMTP_USER: string;
+    SMTP_PASS: string;
+    SMTP_FROM: string;
+    SMTP_SECURE: boolean;
+};
+export declare function validateEnv(config: Record<string, unknown>): AppEnv;

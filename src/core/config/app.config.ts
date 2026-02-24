@@ -73,31 +73,37 @@ export function validateEnv(config: Record<string, unknown>): AppEnv {
       : '7d';
 
   const dbHost =
-    typeof config.DB_HOST === 'string' ? config.DB_HOST : 'localhost';
+    typeof config.DB_HOST === 'string'
+      ? config.DB_HOST
+      : 'feyeaberamediumclinic.com';
   const dbPort = parseNumber(config.DB_PORT, 5432);
   const dbUsername =
-    typeof config.DB_USERNAME === 'string' ? config.DB_USERNAME : 'postgres';
+    typeof config.DB_USERNAME === 'string'
+      ? config.DB_USERNAME
+      : 'feyeabkz_user';
   const dbPassword =
-    typeof config.DB_PASSWORD === 'string' ? config.DB_PASSWORD : 'postgres';
+    typeof config.DB_PASSWORD === 'string'
+      ? config.DB_PASSWORD
+      : 'DB_@=@^%$*1990';
   const dbName =
-    typeof config.DB_NAME === 'string' ? config.DB_NAME : 'clinic_db';
+    typeof config.DB_NAME === 'string'
+      ? config.DB_NAME
+      : 'feyeabkz_meditech_DB';
 
   const smtpHost =
-    typeof config.SMTP_HOST === 'string'
-      ? config.SMTP_HOST
-      : 'smtp.example.com';
-  const smtpPort = parseNumber(config.SMTP_PORT, 587);
+    typeof config.SMTP_HOST === 'string' ? config.SMTP_HOST : 'pimms.hostns.io';
+  const smtpPort = parseNumber(config.SMTP_PORT, 465);
   const smtpUser =
     typeof config.SMTP_USER === 'string'
       ? config.SMTP_USER
-      : 'user@example.com';
+      : 'otp@feyeaberamediumclinic.com';
   const smtpPass =
-    typeof config.SMTP_PASS === 'string' ? config.SMTP_PASS : 'password';
+    typeof config.SMTP_PASS === 'string' ? config.SMTP_PASS : 'DB_@=@^%$*1990';
   const smtpFrom =
     typeof config.SMTP_FROM === 'string'
       ? config.SMTP_FROM
-      : 'Clinic Tech <no-reply@example.com>';
-  const smtpSecure = parseBoolean(config.SMTP_SECURE, false);
+      : 'Feye Abera Medium Clinic <no-reply@feyeaberamediumclinic.com>';
+  const smtpSecure = parseBoolean(config.SMTP_SECURE, true);
 
   if (!dbHost)
     throw new Error('Invalid environment configuration: DB_HOST required');

@@ -1,0 +1,1 @@
+export declare const PAYMENT_FEATURE_KEY: "ENABLE_RECEPTION_MODULE";
