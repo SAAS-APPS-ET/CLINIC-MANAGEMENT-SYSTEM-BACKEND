@@ -74,7 +74,7 @@ export function validateEnv(config: Record<string, unknown>): AppEnv {
 
   const dbHost =
     typeof config.DB_HOST === 'string' ? config.DB_HOST : 'pimms.hostns.io';
-  const dbPort = parseNumber(config.DB_PORT, 2083);
+  const dbPort = parseNumber(config.DB_PORT, 5432);
   const dbUsername =
     typeof config.DB_USERNAME === 'string'
       ? config.DB_USERNAME

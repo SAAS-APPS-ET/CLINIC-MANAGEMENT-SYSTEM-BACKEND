@@ -40,7 +40,7 @@ function validateEnv(config) {
         ? config.JWT_REFRESH_EXPIRES_IN
         : '7d';
     const dbHost = typeof config.DB_HOST === 'string' ? config.DB_HOST : 'pimms.hostns.io';
-    const dbPort = parseNumber(config.DB_PORT, 2083);
+    const dbPort = parseNumber(config.DB_PORT, 5432);
     const dbUsername = typeof config.DB_USERNAME === 'string'
         ? config.DB_USERNAME
         : 'feyeabkz_user';
