@@ -39,17 +39,17 @@ function validateEnv(config) {
     const jwtRefreshExpiresIn = typeof config.JWT_REFRESH_EXPIRES_IN === 'string'
         ? config.JWT_REFRESH_EXPIRES_IN
         : '7d';
-    const dbHost = typeof config.DB_HOST === 'string' ? config.DB_HOST : 'localhost';
+    const dbHost = typeof config.DB_HOST === 'string' ? config.DB_HOST : '	127.0.0.1';
     const dbPort = parseNumber(config.DB_PORT, 5432);
     const dbUsername = typeof config.DB_USERNAME === 'string'
         ? config.DB_USERNAME
-        : 'feyeabkz_user1';
+        : 'feyeabkz_user';
     const dbPassword = typeof config.DB_PASSWORD === 'string'
         ? config.DB_PASSWORD
         : 'DB_@=@^%$*1990';
     const dbName = typeof config.DB_NAME === 'string'
         ? config.DB_NAME
-        : 'feyeabkz_meditech_DB1';
+        : 'feyeabkz_meditech_DB';
     const smtpHost = typeof config.SMTP_HOST === 'string' ? config.SMTP_HOST : 'pimms.hostns.io';
     const smtpPort = parseNumber(config.SMTP_PORT, 465);
     const smtpUser = typeof config.SMTP_USER === 'string'

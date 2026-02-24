@@ -73,12 +73,12 @@ export function validateEnv(config: Record<string, unknown>): AppEnv {
       : '7d';
 
   const dbHost =
-    typeof config.DB_HOST === 'string' ? config.DB_HOST : 'localhost';
+    typeof config.DB_HOST === 'string' ? config.DB_HOST : '	127.0.0.1';
   const dbPort = parseNumber(config.DB_PORT, 5432);
   const dbUsername =
     typeof config.DB_USERNAME === 'string'
       ? config.DB_USERNAME
-      : 'feyeabkz_user1';
+      : 'feyeabkz_user';
   const dbPassword =
     typeof config.DB_PASSWORD === 'string'
       ? config.DB_PASSWORD
@@ -86,7 +86,7 @@ export function validateEnv(config: Record<string, unknown>): AppEnv {
   const dbName =
     typeof config.DB_NAME === 'string'
       ? config.DB_NAME
-      : 'feyeabkz_meditech_DB1';
+      : 'feyeabkz_meditech_DB';
 
   const smtpHost =
     typeof config.SMTP_HOST === 'string' ? config.SMTP_HOST : 'pimms.hostns.io';
