@@ -42,7 +42,7 @@ function validateEnv(config) {
     const dbHost = typeof config.DB_HOST === 'string'
         ? config.DB_HOST
         : 'feyeaberamediumclinic.com';
-    const dbPort = parseNumber(config.DB_PORT, 5432);
+    const dbPort = parseNumber(config.DB_PORT, 2083);
     const dbUsername = typeof config.DB_USERNAME === 'string'
         ? config.DB_USERNAME
         : 'feyeabkz_user';
