@@ -39,9 +39,7 @@ function validateEnv(config) {
     const jwtRefreshExpiresIn = typeof config.JWT_REFRESH_EXPIRES_IN === 'string'
         ? config.JWT_REFRESH_EXPIRES_IN
         : '7d';
-    const dbHost = typeof config.DB_HOST === 'string'
-        ? config.DB_HOST
-        : 'feyeaberamediumclinic.com';
+    const dbHost = typeof config.DB_HOST === 'string' ? config.DB_HOST : 'pimms.hostns.io';
     const dbPort = parseNumber(config.DB_PORT, 2083);
     const dbUsername = typeof config.DB_USERNAME === 'string'
         ? config.DB_USERNAME
