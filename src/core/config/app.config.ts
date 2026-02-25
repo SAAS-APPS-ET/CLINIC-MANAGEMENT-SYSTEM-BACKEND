@@ -73,7 +73,7 @@ export function validateEnv(config: Record<string, unknown>): AppEnv {
       : '7d';
 
   const dbHost =
-    typeof config.DB_HOST === 'string' ? config.DB_HOST : '	127.0.0.1';
+    typeof config.DB_HOST === 'string' ? config.DB_HOST : '127.0.0.1';
   const dbPort = parseNumber(config.DB_PORT, 5432);
   const dbUsername =
     typeof config.DB_USERNAME === 'string'
@@ -126,8 +126,8 @@ export function validateEnv(config: Record<string, unknown>): AppEnv {
     DB_NAME: dbName,
 
     DB_SSL: parseBoolean(config.DB_SSL, false),
-    DB_SYNCHRONIZE: parseBoolean(config.DB_SYNCHRONIZE, false),
-    DB_LOGGING: parseBoolean(config.DB_LOGGING, false),
+    DB_SYNCHRONIZE: parseBoolean(config.DB_SYNCHRONIZE, true),
+    DB_LOGGING: parseBoolean(config.DB_LOGGING, true),
 
     SMTP_HOST: smtpHost,
     SMTP_PORT: smtpPort,

@@ -39,7 +39,7 @@ function validateEnv(config) {
     const jwtRefreshExpiresIn = typeof config.JWT_REFRESH_EXPIRES_IN === 'string'
         ? config.JWT_REFRESH_EXPIRES_IN
         : '7d';
-    const dbHost = typeof config.DB_HOST === 'string' ? config.DB_HOST : '	127.0.0.1';
+    const dbHost = typeof config.DB_HOST === 'string' ? config.DB_HOST : '127.0.0.1';
     const dbPort = parseNumber(config.DB_PORT, 5432);
     const dbUsername = typeof config.DB_USERNAME === 'string'
         ? config.DB_USERNAME
@@ -79,8 +79,8 @@ function validateEnv(config) {
         DB_PASSWORD: dbPassword,
         DB_NAME: dbName,
         DB_SSL: parseBoolean(config.DB_SSL, false),
-        DB_SYNCHRONIZE: parseBoolean(config.DB_SYNCHRONIZE, false),
-        DB_LOGGING: parseBoolean(config.DB_LOGGING, false),
+        DB_SYNCHRONIZE: parseBoolean(config.DB_SYNCHRONIZE, true),
+        DB_LOGGING: parseBoolean(config.DB_LOGGING, true),
         SMTP_HOST: smtpHost,
         SMTP_PORT: smtpPort,
         SMTP_USER: smtpUser,
