@@ -1,11 +1,12 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryColumn } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 import { QueueStatus, VisitStage } from '../../common/enums/visit.enums';
 
 @Entity()
 @Index(['visitId'], { unique: true })
 export class QueueItem {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryColumn()
+  id: string = uuidv4();
 
   @Column()
   visitId: string;

@@ -1,1 +1,0 @@
-export declare const PHARMACY_FEATURE_KEY: "ENABLE_PHARMACY_MODULE";

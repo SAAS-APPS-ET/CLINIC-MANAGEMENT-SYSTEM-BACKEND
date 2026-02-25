@@ -2,14 +2,15 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
 @Entity({ name: 'clinic_config' })
 export class ClinicConfig {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryColumn()
+  id: string = uuidv4();
 
   @Column({ type: 'varchar', unique: true })
   key: string;

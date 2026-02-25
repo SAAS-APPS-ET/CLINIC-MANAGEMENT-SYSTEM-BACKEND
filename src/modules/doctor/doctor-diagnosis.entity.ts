@@ -1,10 +1,11 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryColumn } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 import { Category } from '../category/category.entity';
 
 @Entity()
 export class DoctorDiagnosis {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @PrimaryColumn()
+  id: string = uuidv4();
 
   @Column()
   visitId: string;
