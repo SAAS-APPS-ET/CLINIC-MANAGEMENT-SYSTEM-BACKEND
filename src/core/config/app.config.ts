@@ -47,10 +47,10 @@ function parseNumber(value: unknown, defaultValue: number): number {
 }
 
 export function validateEnv(config: Record<string, unknown>): AppEnv {
-  const nodeEnvRaw = (config.NODE_ENV ?? 'development') as string;
+  const nodeEnvRaw = (config.NODE_ENV ?? 'production') as string;
   const nodeEnv: NodeEnv =
-    nodeEnvRaw === 'production' || nodeEnvRaw === 'test'
-      ? nodeEnvRaw
+    nodeEnvRaw === 'production' || nodeEnvRaw === 'production'
+      ? 'production'
       : 'development';
 
   const port = parseNumber(config.PORT, 3000);
