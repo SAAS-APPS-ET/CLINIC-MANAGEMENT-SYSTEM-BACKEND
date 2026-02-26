@@ -1,0 +1,1 @@
+export declare const VITAL_FEATURE_KEY: "ENABLE_VITAL_MODULE";

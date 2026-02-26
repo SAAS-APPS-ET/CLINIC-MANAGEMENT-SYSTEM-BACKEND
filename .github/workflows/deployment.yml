@@ -23,11 +23,11 @@ jobs:
         with:
           node-version: ${{matrix.node-version}}
 
-      - name: 🔨 Build Project
-        run: |
-          npm install
-          npm install typescript
-          npm run build
+      # - name: 🔨 Build Project
+      #   # run: |
+      #   #   npm install
+      #   #   npm install typescript
+      #   #   npm run build
 
       - name: List output files
         run: find dist/ -print
